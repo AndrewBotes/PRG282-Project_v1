@@ -1,0 +1,24 @@
+C:\Users\user-pc\source\repos\Apps\Apps\bin\Debug\Apps.exe.config
+C:\Users\user-pc\source\repos\Apps\Apps\bin\Debug\Apps.exe
+C:\Users\user-pc\source\repos\Apps\Apps\bin\Debug\Apps.pdb
+C:\Users\user-pc\source\repos\Apps\Apps\obj\Debug\Apps.csproj.AssemblyReference.cache
+C:\Users\user-pc\source\repos\Apps\Apps\obj\Debug\Apps.csproj.SuggestedBindingRedirects.cache
+C:\Users\user-pc\source\repos\Apps\Apps\obj\Debug\Apps.Form1.resources
+C:\Users\user-pc\source\repos\Apps\Apps\obj\Debug\Apps.Properties.Resources.resources
+C:\Users\user-pc\source\repos\Apps\Apps\obj\Debug\Apps.csproj.GenerateResource.cache
+C:\Users\user-pc\source\repos\Apps\Apps\obj\Debug\Apps.csproj.CoreCompileInputs.cache
+C:\Users\user-pc\source\repos\Apps\Apps\obj\Debug\Apps.exe
+C:\Users\user-pc\source\repos\Apps\Apps\obj\Debug\Apps.pdb
+C:\Users\vorst\OneDrive\Desktop\The Coder Francois Vorster 577969 Practical 1 PRG 271\Apps\obj\Debug\Apps.csproj.AssemblyReference.cache
+C:\Users\vorst\OneDrive\Desktop\The Coder Francois Vorster 577969 Practical 1 PRG 271\Apps\obj\Debug\Apps.csproj.SuggestedBindingRedirects.cache
+C:\Users\vorst\OneDrive\Desktop\The Coder Francois Vorster 577969 Practical 1 PRG 271\Apps\obj\Debug\Apps.Form1.resources
+C:\Users\vorst\OneDrive\Desktop\The Coder Francois Vorster 577969 Practical 1 PRG 271\Apps\obj\Debug\Apps.Properties.Resources.resources
+C:\Users\vorst\OneDrive\Desktop\The Coder Francois Vorster 577969 Practical 1 PRG 271\Apps\obj\Debug\Apps.csproj.GenerateResource.cache
+C:\Users\vorst\OneDrive\Desktop\The Coder Francois Vorster 577969 Practical 1 PRG 271\Apps\obj\Debug\Apps.csproj.CoreCompileInputs.cache
+C:\Users\vorst\OneDrive\Desktop\The Coder Francois Vorster 577969 Practical 1 PRG 271\Apps\obj\Debug\Apps.exe
+C:\Users\vorst\OneDrive\Desktop\The Coder Francois Vorster 577969 Practical 1 PRG 271\Apps\obj\Debug\Apps.pdb
+C:\Users\vorst\OneDrive\Desktop\The Coder Francois Vorster 577969 Practical 1 PRG 271\Apps\bin\Debug\Apps.exe.config
+C:\Users\vorst\OneDrive\Desktop\The Coder Francois Vorster 577969 Practical 1 PRG 271\Apps\bin\Debug\Apps.exe
+C:\Users\vorst\OneDrive\Desktop\The Coder Francois Vorster 577969 Practical 1 PRG 271\Apps\bin\Debug\Apps.pdb
+C:\Users\vorst\OneDrive\Desktop\The Coder Francois Vorster 577969 Practical 1 PRG 271\Apps\obj\Debug\Apps.Form2.resources
+C:\Users\vorst\OneDrive\Desktop\The Coder Francois Vorster 577969 Practical 1 PRG 271\Apps\obj\Debug\Apps.Form3.resources
