@@ -15,10 +15,10 @@ namespace PRG282_Project_v1
     {
 
         DataHandler data = new DataHandler();
-        private static string conn = @"Data Source=ANDREWS-LAPTOP\SQLEXPRESS;Initial Catalog=ZONE15;Integrated Security=True";
+        private static string conn = @"Data Source=ANDREWS-LAPTOP\SQLEXPRESS;Initial Catalog=BelgiumCampus;Integrated Security=True";
         public static SqlConnection connection = new SqlConnection(conn);
         SqlCommand command;
-        SqlDataReader reader;
+
         public Form4()
         {
             InitializeComponent();
@@ -26,86 +26,31 @@ namespace PRG282_Project_v1
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (textBoxModuleCode.Text == "")
-            {
-                MessageBox.Show("Please Enter: Module", "Warning!");
-                return;
-            }
-            /*try
-            {
-                int test = int.Parse(textBoxModuleCode.Text);
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Please Enter:Valid Module Code", "Warning!");
-                return;
-            }*/
 
-            if ((textBoxModuleCode.Text).Length != 6)
+            try
             {
-                MessageBox.Show("Please Enter: Module Code not the correct length", "Warning!");
+                //Send Data
+                data.SaveMethodModule(Int32.Parse(textBoxModuleCode.Text), textBoxModuleN.Text, textBoxModuleDesc.Text, textBoxModuleR.Text);
             }
-
-            if ((textBoxModuleN.Text) == "")
+            catch (Exception ex)
             {
-                MessageBox.Show("Please Enter: Module Name", "Warning!");
-            }
 
-            if ((textBoxModuleDesc.Text) == "")
-            {
-                MessageBox.Show("Please Enter: Module Description", "Warning!");
+                MessageBox.Show(ex.Message);
             }
-
-            if ((textBoxModuleR.Text) == "")
-            {
-                MessageBox.Show("Please Enter: Links to resources", "Warning!");
-            }
-
-            //Send Data
-            data.SaveMethodModule(textBoxModuleCode.Text, textBoxModuleN.Text, textBoxModuleDesc.Text, textBoxModuleR.Text);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            //data.updateMethodStudent();
-
-            if (textBoxModuleCode.Text == "")
-            {
-                MessageBox.Show("Please Enter: Module", "Warning!");
-                return;
-            }
             try
             {
-                int test = int.Parse(textBoxModuleCode.Text);
+                //Send Data
+                data.UpdateMethodModule(Int32.Parse(txtSearchM.Text), textBoxModuleN.Text, textBoxModuleDesc.Text, textBoxModuleR.Text);
             }
-            catch (FormatException)
+            catch (Exception ex)
             {
-                MessageBox.Show("Please Enter:Valid Module Code", "Warning!");
-                return;
-            }
 
-            if ((textBoxModuleCode.Text).Length != 6)
-            {
-                MessageBox.Show("Please Enter: Module Code not the correct length", "Warning!");
+                MessageBox.Show(ex.Message);
             }
-
-            if ((textBoxModuleN.Text) == "")
-            {
-                MessageBox.Show("Please Enter: Module Name", "Warning!");
-            }
-
-            if ((textBoxModuleDesc.Text) == "")
-            {
-                MessageBox.Show("Please Enter: Module Description", "Warning!");
-            }
-
-            if ((textBoxModuleR.Text) == "")
-            {
-                MessageBox.Show("Please Enter: Links to resources", "Warning!");
-            }
-
-            //Send Data
-            data.UpdateMethodModule(textBoxModuleCode.Text, textBoxModuleN.Text, textBoxModuleDesc.Text, textBoxModuleR.Text);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -116,13 +61,13 @@ namespace PRG282_Project_v1
             }
             else
             {
-                data.DeleteMethodModule(textBoxModuleCode.Text);
+                data.DeleteMethodModule(Int32.Parse(txtSearchM.Text));
             }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            dataGridView1.DataSource = data.searchMethodModule(Int32.Parse(txtSearchM.Text));
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -166,9 +111,6 @@ namespace PRG282_Project_v1
         {
             try
             {
-                connection.Open();
-                MessageBox.Show("The Connection is now open");
-
                 command = new SqlCommand("select*from Modules", connection);
 
                 SqlDataReader reader;
@@ -185,19 +127,6 @@ namespace PRG282_Project_v1
             {
 
                 MessageBox.Show(error.ToString());
-            }
-
-            finally
-            {
-                if (connection != null)
-                {
-                    connection.Close();
-                }
-
-                if (reader != null)
-                {
-                    reader.Close();
-                }
             }
         }
 

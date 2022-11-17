@@ -6,45 +6,16 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.Drawing;
 
 namespace PRG282_Project_v1
 {
     internal class DataHandler
     {
-        int studentN;
-        string Name;
-        string Surname;
-
-
-        string Gender;
-        string DOB;
-        string PhoneNum;
-
-        string Address;
-        string ModuleC;
-
-
-
         private SqlConnection conn;
         private SqlCommand command;
-        private SqlDataReader reader;
 
-        private string connection = "Server =(local); Initial Catalog =BelgiumCampus; Integrated Security =SSPI";
-
-
-
-        public DataHandler(int studentN, string Name, string Surname, string Gender, string DOB, string PhoneNum, string Address, string ModuleC)
-        {
-
-            this.studentN = studentN;
-            this.Name = Name;
-            this.Surname = Surname;
-            this.Gender = Gender;
-            this.DOB = DOB;
-            this.PhoneNum = PhoneNum;
-            this.Address = Address;
-            this.ModuleC = ModuleC;
-        }
+        private string connection = @"Data Source=ANDREWS-LAPTOP\SQLEXPRESS;Initial Catalog=BelgiumCampus;Integrated Security=True";
 
         public DataHandler()
         {
@@ -55,11 +26,10 @@ namespace PRG282_Project_v1
             conn = new SqlConnection(connection);
             conn.Open();
         }
-        public void SaveMethodModule(string ModuleCodes, string ModuleNames, string ModuleDescs, string ModuleRs)
+        public void SaveMethodModule(int ModuleCodes, string ModuleNames, string ModuleDescs, string ModuleRs)
         {
-            string insertQuery = ("Insert into Modules Values ( '" + ModuleCodes + "','" + ModuleNames + "','" + ModuleDescs + "','" + ModuleRs + "','");
+            string insertQuery = ("Insert into Modules Values ( '" + ModuleCodes + "','" + ModuleNames + "','" + ModuleDescs + "','" + ModuleRs + "'");
 
-            DataTable l = new DataTable();
             openCon();
             command = new SqlCommand(insertQuery, conn);
             try
@@ -79,9 +49,9 @@ namespace PRG282_Project_v1
             }
         }
 
-        public void UpdateMethodModule(string ModuleCodeu, string ModuleNameu, string ModuleDescu, string ModuleRu)
+        public void UpdateMethodModule(int ModuleCodeu, string ModuleNameu, string ModuleDescu, string ModuleRu)
         {
-            string updateQuery = ("UPDATE Modules SET[Module] = '" + ModuleCodeu + "', [ModuleName]= '" + ModuleNameu + "', [ModuleDesc]='" + ModuleDescu + "',, [ModuleResources]='" + ModuleRu + "' WHERE [StudentNumber]='" + ModuleCodeu + "' ");
+            string updateQuery = ("UPDATE Modules SET [ModuleName]= '" + ModuleNameu + "', [ModuleDesc]='" + ModuleDescu + "',, [ModuleResources]='" + ModuleRu + "' WHERE [Module] = '" + ModuleCodeu + "'");
 
             openCon();
 
@@ -98,7 +68,7 @@ namespace PRG282_Project_v1
 
             }
         }
-        public void DeleteMethodModule(string ModuleCoded)
+        public void DeleteMethodModule(int ModuleCoded)
         {
             string deleteQuery = ("DELETE FROM Modules WHERE Module ='" + ModuleCoded + "'");
             openCon();
@@ -115,12 +85,11 @@ namespace PRG282_Project_v1
                 MessageBox.Show(err.ToString());
             }
         }
-        public void SaveMethodStudent(int studentNf, string Namef, string Surnamef, string Genderf, string DOBf, string PhoneNumf, string Addressf, string ModuleCf)
+        public void SaveMethodStudent(int studentNf, string Namef, string Surnamef, string Genderf, DateTime DOBf, string PhoneNumf, string Addressf, int ModuleCode)
         {
 
-            string insertQuery = ("Insert into Student Values ( '" + studentNf + "','" + Namef + "','" + Surnamef + "','" + Genderf + "','" + DOBf + "','" + PhoneNumf + "','" + Addressf + "'','" + ModuleCf + "')");
+            string insertQuery = ("Insert into Students Values ( '" + studentNf + "','" + Namef + "','" + Surnamef + "','" + Genderf + "','" + DOBf + "','" + PhoneNumf + "','" + Addressf + "'','" + ModuleCode + "')");
 
-            DataTable l = new DataTable();
             openCon();
             command = new SqlCommand(insertQuery, conn);
             try
@@ -142,7 +111,7 @@ namespace PRG282_Project_v1
         }
         public void deleteMethodStudent(int StudentND)
         {
-            string deleteQuery = ("DELETE FROM Student WHERE ID ='" + StudentND + "'");
+            string deleteQuery = ("DELETE FROM Students WHERE ID ='" + StudentND + "'");
             openCon();
             command = new SqlCommand(deleteQuery, conn);
             try
@@ -163,70 +132,52 @@ namespace PRG282_Project_v1
 
         }
 
-        public void updateMethodStudent(int studentNu, string Nameu, string Surnameu, string Genderu, string DOBu, string PhoneNumu, string Addressu, string ModuleCu)
+        public void updateMethodStudent(int studentNf, string Namef, string Surnamef, string Genderf, DateTime DOBf, string PhoneNumf, string Addressf, int ModuleCode)
         {
-            string updateQuery = ("UPDATE Student SET[StudentNumber] = '" + studentNu + "', [Name]= '" + Nameu + "', [Surname]='" + Surnameu + "',, [Gender]='" + Genderu + "', [DOB]='" + DOBu + "', [PhoneNumber]='" + PhoneNumu + "', [Address]='" + Addressu + "', [Module]='" + ModuleCu + "' WHERE [StudentNumber]='" + studentNu + "' ");
-            //string insertQuery = ("UPDATE into Student SET ( '" + studentNf + "','" + Namef + "','" + Surnamef + "','" + Genderf + "','" + DOBf + "','" + PhoneNumf + "','" + Addressf + "'','" + ModuleCf + "')");
+            string updateQuery = ("UPDATE Students SET [Name]= '" + Namef + "', [Surname]='" + Surnamef + "',, [Gender]='" + Genderf + "', [DOB]='" + DOBf + "', [PhoneNumber]='" + PhoneNumf + "', [Address]='" + Addressf + "', [ModuleCode]='" + ModuleCode + "' WHERE [StudentNumber]='" + studentNf + "' ");
+ 
             openCon();
 
             command = new SqlCommand(updateQuery, conn);
             try
             {
                 command.ExecuteNonQuery();
-                MessageBox.Show("Record that contains the student number:" + studentNu + " was updated");
+                MessageBox.Show("Record that contains the student number:" + studentNf + " was updated");
             }
             catch (SqlException error)
             {
                 MessageBox.Show(error.ToString());
-
-
             }
-
-
         }
 
-        public void searchMethod(string IDs)
+        public DataTable searchMethodNew(int IDs)
         {
-            string searchQuery = ("SELECT*FROM PatientDetails WHERE ID ='" + IDs + "'");
-            openCon();
-            command = new SqlCommand(searchQuery, conn);
+            string searchQuery = ("SELECT*FROM Students WHERE ID ='" + IDs + "'");
 
-            try
-            {
-                reader = command.ExecuteReader();
+            conn = new SqlConnection(connection);
 
-                if (reader.Read())
-                {
+            SqlDataAdapter da = new SqlDataAdapter(searchQuery, conn);
 
-                    Name = reader[1].ToString();
-                    Surname = reader[2].ToString();
-                    Gender = reader[3].ToString();
-                    DOB = reader[4].ToString();
-                    PhoneNum = reader[5].ToString();
+            DataTable dt = new DataTable();
 
+            da.Fill(dt);
 
-                    MessageBox.Show("The Record for " + IDs + "was found");
-                }
-                else
-                {
-                    MessageBox.Show("The Record for " + IDs + " was not found");
-                }
+            return dt;
+        }
 
-            }
-            catch (SqlException err)
-            {
+        public DataTable searchMethodModule(int IDs)
+        {
+            string searchQuery = ("SELECT*FROM Modules WHERE ID ='" + IDs + "'");
 
-                MessageBox.Show(err.Message);
-            }
-            finally
-            {
+            conn = new SqlConnection(connection);
 
-                if (conn != null)
-                {
-                    conn.Close();
-                }
-                reader.Close();
-            }
+            SqlDataAdapter da = new SqlDataAdapter(searchQuery, conn);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            return dt;
         }
     }
 }

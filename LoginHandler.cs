@@ -24,7 +24,7 @@ namespace PRG282_Project_v1
         {
             FileStream fs = new FileStream(path, FileMode.OpenOrCreate);
 
-            using(StreamWriter sw = new StreamWriter(fs))
+            using (StreamWriter sw = new StreamWriter(fs))
             {
                 Login user = new Login(username, password);
                 users.Add(user);

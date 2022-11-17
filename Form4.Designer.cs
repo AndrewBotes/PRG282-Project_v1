@@ -46,12 +46,14 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.txtSearchM = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxModuleR
             // 
-            this.textBoxModuleR.Location = new System.Drawing.Point(727, 153);
+            this.textBoxModuleR.Location = new System.Drawing.Point(646, 154);
             this.textBoxModuleR.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxModuleR.Name = "textBoxModuleR";
             this.textBoxModuleR.Size = new System.Drawing.Size(132, 22);
@@ -59,7 +61,7 @@
             // 
             // textBoxModuleDesc
             // 
-            this.textBoxModuleDesc.Location = new System.Drawing.Point(727, 95);
+            this.textBoxModuleDesc.Location = new System.Drawing.Point(646, 96);
             this.textBoxModuleDesc.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxModuleDesc.Name = "textBoxModuleDesc";
             this.textBoxModuleDesc.Size = new System.Drawing.Size(132, 22);
@@ -67,7 +69,7 @@
             // 
             // textBoxModuleN
             // 
-            this.textBoxModuleN.Location = new System.Drawing.Point(405, 148);
+            this.textBoxModuleN.Location = new System.Drawing.Point(324, 149);
             this.textBoxModuleN.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxModuleN.Name = "textBoxModuleN";
             this.textBoxModuleN.Size = new System.Drawing.Size(132, 22);
@@ -75,7 +77,7 @@
             // 
             // textBoxModuleCode
             // 
-            this.textBoxModuleCode.Location = new System.Drawing.Point(405, 95);
+            this.textBoxModuleCode.Location = new System.Drawing.Point(324, 96);
             this.textBoxModuleCode.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxModuleCode.Name = "textBoxModuleCode";
             this.textBoxModuleCode.Size = new System.Drawing.Size(132, 22);
@@ -84,48 +86,48 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(584, 156);
+            this.label14.Location = new System.Drawing.Point(503, 157);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(115, 16);
+            this.label14.Size = new System.Drawing.Size(124, 17);
             this.label14.TabIndex = 39;
             this.label14.Text = "Links to resources";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(584, 98);
+            this.label13.Location = new System.Drawing.Point(503, 99);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(123, 16);
+            this.label13.Size = new System.Drawing.Size(129, 17);
             this.label13.TabIndex = 38;
             this.label13.Text = "Module Description";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(271, 151);
+            this.label12.Location = new System.Drawing.Point(190, 152);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(92, 16);
+            this.label12.Size = new System.Drawing.Size(95, 17);
             this.label12.TabIndex = 37;
             this.label12.Text = "Module Name";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(271, 98);
+            this.label11.Location = new System.Drawing.Point(190, 99);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 16);
+            this.label11.Size = new System.Drawing.Size(91, 17);
             this.label11.TabIndex = 36;
             this.label11.Text = "Module Code";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(398, 19);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(317, 20);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(335, 42);
@@ -136,7 +138,7 @@
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(168, 255);
+            this.dataGridView1.Location = new System.Drawing.Point(87, 256);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -145,7 +147,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(960, 617);
+            this.btnExit.Location = new System.Drawing.Point(865, 617);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(119, 38);
@@ -156,7 +158,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(452, 199);
+            this.btnClear.Location = new System.Drawing.Point(544, 201);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(108, 38);
@@ -167,7 +169,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(867, 478);
+            this.btnUpdate.Location = new System.Drawing.Point(786, 479);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(119, 38);
@@ -178,7 +180,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(867, 326);
+            this.btnSearch.Location = new System.Drawing.Point(324, 574);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(119, 38);
@@ -189,7 +191,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(867, 399);
+            this.btnDelete.Location = new System.Drawing.Point(786, 400);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(119, 38);
@@ -200,7 +202,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(595, 199);
+            this.btnSave.Location = new System.Drawing.Point(324, 201);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(119, 38);
@@ -211,7 +213,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(867, 255);
+            this.button1.Location = new System.Drawing.Point(786, 327);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(119, 38);
@@ -231,11 +233,32 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // txtSearchM
+            // 
+            this.txtSearchM.Location = new System.Drawing.Point(598, 582);
+            this.txtSearchM.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearchM.Name = "txtSearchM";
+            this.txtSearchM.Size = new System.Drawing.Size(132, 22);
+            this.txtSearchM.TabIndex = 54;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(492, 585);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 17);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "Module Code";
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 668);
+            this.BackgroundImage = global::PRG282_Project_v1.Properties.Resources.Back;
+            this.ClientSize = new System.Drawing.Size(995, 674);
+            this.Controls.Add(this.txtSearchM);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnExit);
@@ -284,5 +307,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.TextBox txtSearchM;
+        private System.Windows.Forms.Label label1;
     }
 }
