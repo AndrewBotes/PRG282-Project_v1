@@ -15,7 +15,8 @@ namespace PRG282_Project_v1
     {
 
         DataHandler data = new DataHandler();
-        public static SqlConnection connection;
+        private static string conn = @"Data Source=ANDREWS-LAPTOP\SQLEXPRESS;Initial Catalog=ZONE15;Integrated Security=True";
+        public static SqlConnection connection = new SqlConnection(conn);
         SqlCommand command;
         SqlDataReader reader;
         public Form4()
@@ -198,6 +199,19 @@ namespace PRG282_Project_v1
                     reader.Close();
                 }
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 studentForm = new Form1();
+            studentForm.ShowDialog();
+            this.Close();
         }
     }
 }

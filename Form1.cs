@@ -338,5 +338,23 @@ namespace PRG282_Project_v1
             textBoxAddress.Clear();
             textBoxModuleC.Clear();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void btnAddModule_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form4 moduleForm = new Form4();
+            moduleForm.ShowDialog();
+            this.Close();
+        }
     }
 }
